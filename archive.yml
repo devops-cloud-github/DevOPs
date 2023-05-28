@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: archive files
+      archive:
+        source:
+        dest:
+        format: gz
+        force_archive: true
+        woner: "{{ ansible_user}}"
+        group: "{{ ansible_user }}"
